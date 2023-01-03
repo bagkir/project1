@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load my_filters %}
+
+{% block title %}{{sign|add:'111'}} {% endblock %}
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'horoscope/css/info_zodiac.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+
+
+
+{% if description_dict is None %}
+        <h1>Неправильный знак зодиака - {{sign}}</h1>
+    {% else %}
+        <h1>{{description_dict|split}}</h1>
+        <h2>{{description_dict|title}}</h2>
+    {% endif %}
+{% for i in 3|filter_range:'7' %}
+    <h1>{{i}}</h1>
+{% endfor %}{% endblock %}

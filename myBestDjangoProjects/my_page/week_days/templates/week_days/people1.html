@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>МЕНю</title>
+</head>
+<body>
+
+    <ul>
+        {% for person in people %}
+            <div>
+                <li></li><h5>ФИО - {{person.name}}</h5>
+                <p>Возраст - {{person.age}}</p>
+                <p>Телефон - {{person.phone}}</p></li>
+            </div>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
